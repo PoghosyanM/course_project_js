@@ -3,10 +3,11 @@ export function createUserInfoElem(userData, mainContent) {
 
   const content = document.createElement("div");
   const image = document.createElement("img");
-  const fullname = document.createElement("h3");
+  const fullname = document.createElement("h2");
 
-  image.setAttribute("src", picture.medium);
+  image.setAttribute("src", picture.large);
   fullname.innerText = `${name.first} ${name.last}`;
-  content.append(image, fullname);
+  content.append(fullname, image);
+  content.setAttribute("id", "userData");
   mainContent.append(content);
 }

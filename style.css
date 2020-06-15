@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+#usersContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin: 10px;
+}
+
+#userData {
+  background-color: rgb(177, 209, 202);
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px;
+}
+
+#userData > img {
+  border-radius: 10px;
+}
+
+#header {
+  height: 70px;
+  display: grid;
+  place-content: center;
+  background-color: #2d2d3b;
+}
+
+#searchInput {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 0 10px;
+  outline: 0;
+}
+
+#searchInput::placeholder {
+  font-size: 20px;
+  text-align: center;
+}
