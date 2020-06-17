@@ -40,3 +40,36 @@ body {
   font-size: 20px;
   text-align: center;
 }
+.paginationContent {
+  display: inline-grid;
+  grid-template-columns: repeat(10, auto);
+  column-gap: 20px;
+  width: max-content;
+  margin: 30px;
+}
+
+.pageItem {
+  background-color: burlywood;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.pagination {
+  width: max-content;
+  margin: auto;
+  display: inline-block;
+}
+
+.paginationContainer {
+  width: max-content;
+  margin: auto;
+  text-align: center;
+}
+
+.pageItem.active {
+  background-color: #bebebe;
+}
