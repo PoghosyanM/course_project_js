@@ -1,42 +1,43 @@
-body {
-  margin: 0;
+body{
+    background-color: rgb(102, 209, 228);
+    
+}
+img{
+    border: black solid 2px;
+    margin-right: 10px;
+    float: left;
+}
+#id_h3{
+    border: black 2px solid;
+    background-color: cornsilk;
+    border-radius: 0px 50px 0px 0px;
+    width: 55%;
+    height: 100px;
+    padding: 15px;
 }
 
-#usersContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  margin: 10px;
+
+#id_h4{
+    border: black 2px solid;
+    background-color: wheat;
+    border-radius: 50px 50px 50px 0px;
+    width: 55%;
+    height: 105px;
+    border-top-left-radius: 1px ;
+    border-top-right-radius: 1px ;
+    padding: 15px;
 }
 
-#userData {
-  background-color: rgb(177, 209, 202);
-  border-radius: 10px;
-  text-align: center;
-  padding: 12px;
+li{
+    list-style-type: none;
 }
 
-#userData > img {
-  border-radius: 10px;
+header{
+    padding-left: 18%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#header {
-  height: 70px;
-  display: grid;
-  place-content: center;
-  background-color: #2d2d3b;
-}
-
-#searchInput {
-  width: 300px;
-  height: 30px;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 0 10px;
-  outline: 0;
-}
-
-#searchInput::placeholder {
-  font-size: 20px;
-  text-align: center;
+.input{
+   background-color: coral;
 }
