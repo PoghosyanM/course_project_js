@@ -99,7 +99,10 @@ body {
 .paginationButton[disabled] {
   cursor: not-allowed;
 }
+<<<<<<< HEAD
 
 button[disabled] {
   cursor: not-allowed;
 }
+=======
+>>>>>>> 15a0b5838ab1dcc655ed377735e45a54bb19c466
