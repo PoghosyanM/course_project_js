@@ -74,7 +74,7 @@ function setCurrentPage(paginationRootElem, i=1, numberOfUsers=10 ) {
   paginationRootElem.append(paginationContent);
 }
 
-console.log(i)
+
 
 
 prevPageButton.innerText = "<";
