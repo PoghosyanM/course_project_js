@@ -71,10 +71,10 @@ function setCurrentPage(paginationRootElem, i=1, numberOfUsers=10 ) {
     });
     paginationContent.append(pageItem);
   }
-  paginationRootElem.append(paginationContent);
+   paginationRootElem.append(paginationContent);
 }
 
-
+ 
 
 
 prevPageButton.innerText = "<";
