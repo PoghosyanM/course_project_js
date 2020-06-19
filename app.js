@@ -8,6 +8,18 @@ const pagination = document.createElement("div");
 const paginationContainer = document.createElement("div");
 const nextPageButton = document.createElement("button");
 const prevPageButton = document.createElement("button");
+const nextPortionButton = document.createElement("button");
+const prevPortionButton = document.createElement("button");
+
+prevPageButton.classList.add("prevPage");
+nextPageButton.classList.add("nextPage");
+prevPortionButton.classList.add("prevPortion");
+nextPortionButton.classList.add("nextPortion");
+
+prevPageButton.classList.add("paginationButton");
+nextPageButton.classList.add("paginationButton");
+prevPortionButton.classList.add("paginationButton");
+nextPortionButton.classList.add("paginationButton");
 
 pagination.classList.add("pagination");
 paginationContainer.classList.add("paginationContainer");
@@ -31,11 +43,25 @@ async function getUsersData(currentPage) {
 }
 
 let currentPage = 1;
+let portionFirstPage = 1;
+const portionSize = 10;
 
-function setCurrentPage(paginationRootElem) {
+function setCurrentPage(paginationRootElem, startWith) {
+  console.log(currentPage);
+  if (currentPage === 1) {
+    prevPageButton.disabled = true;
+  } else {
+    prevPageButton.disabled = false;
+  }
+  if (portionFirstPage < portionSize) {
+    prevPortionButton.disabled = true;
+  } else {
+    prevPortionButton.disabled = false;
+  }
+
   const paginationContent = document.createElement("div");
   paginationContent.classList.add("paginationContent");
-  for (let i = 1; i <= 10; i++) {
+  for (let i = startWith; i < startWith + portionSize; i++) {
     const pageItem = document.createElement("span");
     pageItem.innerText = i;
     pageItem.classList.add("pageItem");
@@ -47,7 +73,7 @@ function setCurrentPage(paginationRootElem) {
       paginationContent.remove();
       usersContainer.innerHTML = "";
       currentPage = i;
-      setCurrentPage(paginationRootElem);
+      setCurrentPage(paginationRootElem, portionFirstPage);
     });
     paginationContent.append(pageItem);
   }
@@ -56,25 +82,66 @@ function setCurrentPage(paginationRootElem) {
 
 prevPageButton.innerText = "<";
 nextPageButton.innerText = ">";
+prevPortionButton.innerText = "<<";
+nextPortionButton.innerText = ">>";
+
 prevPageButton.addEventListener("click", () => {
+  if (currentPage === 1) {
+    return;
+  }
   const paginationContent = document.querySelector(".paginationContent");
   usersContainer.innerHTML = "";
   paginationContent.remove();
-  currentPage--;
-  setCurrentPage(pagination);
+  if (currentPage === portionFirstPage) {
+    currentPage--;
+    setCurrentPage(pagination, (portionFirstPage -= portionSize));
+  } else {
+    currentPage--;
+    setCurrentPage(pagination, portionFirstPage);
+  }
 });
 
 nextPageButton.addEventListener("click", () => {
   const paginationContent = document.querySelector(".paginationContent");
   usersContainer.innerHTML = "";
   paginationContent.remove();
-  currentPage++;
-  setCurrentPage(pagination);
+  if (currentPage === portionFirstPage + portionSize - 1) {
+    currentPage++;
+    setCurrentPage(pagination, (portionFirstPage += portionSize));
+  } else {
+    currentPage++;
+    setCurrentPage(pagination, portionFirstPage);
+  }
 });
 
-setCurrentPage(pagination);
+prevPortionButton.addEventListener("click", () => {
+  if (portionFirstPage < portionSize) {
+    return;
+  }
+  const paginationContent = document.querySelector(".paginationContent");
+  usersContainer.innerHTML = "";
+  paginationContent.remove();
+  currentPage = portionFirstPage - portionSize;
+  setCurrentPage(pagination, (portionFirstPage -= portionSize));
+});
 
-paginationContainer.append(prevPageButton, pagination, nextPageButton);
+nextPortionButton.addEventListener("click", () => {
+  const paginationContent = document.querySelector(".paginationContent");
+  usersContainer.innerHTML = "";
+  paginationContent.remove();
+  currentPage = portionFirstPage + portionSize;
+  setCurrentPage(pagination, (portionFirstPage += portionSize));
+});
+
+setCurrentPage(pagination, portionFirstPage);
+
+paginationContainer.append(
+  prevPortionButton,
+  prevPageButton,
+  pagination,
+  nextPageButton,
+  nextPortionButton
+);
 
 rootElem.append(usersContainer);
 rootElem.append(paginationContainer);
