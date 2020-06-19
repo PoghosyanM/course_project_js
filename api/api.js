@@ -8,3 +8,4 @@ export async function fetchUsers(currentPage, usersCount = 10) {
     console.log(error);
   }
 }
+

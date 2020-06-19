@@ -1,23 +1,36 @@
+p{
+    margin: 9px;
+    color: black;
+}
+h3{
+    margin: 5px;
+    color: maroon;
+}
+
 body {
   margin: 0;
 }
 
-#usersContainer {
+.cont {
+  background-color:  rgb(234, 234, 234);
+  width: 400px;
+  height: auto;
+  border: 1px double ;
+  margin: 20px 0 20px;
+  border-color: maroon;
+  border-radius: 5px;
+}
+#usersContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  margin: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-#userData {
-  background-color: rgb(177, 209, 202);
-  border-radius: 10px;
-  text-align: center;
-  padding: 12px;
-}
-
-#userData > img {
-  border-radius: 10px;
+.img{
+  float: left;
+    margin: 9px 5px;
+    border: 2px dotted;
+    border-color: #800000;
+    border-radius: 50%;
 }
 
 #header {
@@ -40,6 +53,7 @@ body {
   font-size: 20px;
   text-align: center;
 }
+
 .paginationContent {
   display: inline-grid;
   grid-template-columns: repeat(10, auto);
