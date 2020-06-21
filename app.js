@@ -133,7 +133,7 @@ nextSectionButton.addEventListener("click", () => {
 
 setCurrentPage(pagination);
 
-paginationContainer.append(prevSectionButton, prevPageButton, pagination, nextPageButton, nextSectionButton);
-
+ paginationContainer.append(prevSectionButton, prevPageButton, pagination, nextPageButton, nextSectionButton);
+ 
 rootElem.append(usersContainer);
 rootElem.append(paginationContainer);
