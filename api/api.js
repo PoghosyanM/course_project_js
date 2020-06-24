@@ -1,7 +1,12 @@
-export async function fetchUsers(currentPage, usersCount = 10) {
+export async function fetchUsers(
+  currentPage,
+  userNation = "",
+  usersCount = 10
+) {
+  const baseUrl = "https://randomuser.me/api/";
   try {
     const response = await fetch(
-      `https://randomuser.me/api/?page=${currentPage}&results=${usersCount}&seed=abc`
+      `${baseUrl}?page=${currentPage}&results=${usersCount}&nat=${userNation}&seed=abc`
     );
     return await response.json();
   } catch (error) {

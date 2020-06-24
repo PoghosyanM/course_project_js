@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-image: url(https://cdn.wallpaperdirect.com/asset/img/product/159059/tiled/arthouse-diamond-white-brick-white-wallpaper-tiled-159059.jpg);
 }
 
 #usersContainer {
@@ -10,10 +11,11 @@ body {
 }
 
 #userData {
-  background-color: rgb(177, 209, 202);
+  background-color: #ffffff;
   border-radius: 10px;
   text-align: center;
   padding: 12px;
+  border: 2px solid;
 }
 
 #userData > img {
@@ -21,10 +23,18 @@ body {
 }
 
 #header {
-  height: 70px;
+  position: sticky;
+  top: 0;
+  padding: 12px;
   display: grid;
   place-content: center;
-  background-color: #2d2d3b;
+  background-color: #ffffffbb;
+}
+#header > select {
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 #searchInput {
@@ -34,6 +44,7 @@ body {
   font-size: 20px;
   padding: 0 10px;
   outline: 0;
+  margin-bottom: 10px;
 }
 
 #searchInput::placeholder {
@@ -49,13 +60,14 @@ body {
 }
 
 .pageItem {
-  background-color: burlywood;
+  background-color: #ffffff;
   width: 30px;
   height: 30px;
   display: grid;
   place-content: center;
   cursor: pointer;
   border-radius: 10px;
+  border: 3px solid;
 }
 
 .pagination {
@@ -71,38 +83,33 @@ body {
 }
 
 .pageItem.active {
-  background-color: #bebebe;
+  background-color: #e2e2e2;
+  font-weight: 700;
+  color: #1d9c9c;
 }
 
-.paginationButton {
+.paginationContainer > button {
   padding: 5px 10px;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
   outline: 0;
-}
-.paginationButton:hover {
-  background-color: #797979;
-}
-.prevPage,
-.nextPage {
-  background-color: #3b3b3b;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #162d58;
+  color: #ffffff;
 }
 
-.prevPortion,
-.nextPortion {
-  background-color: #242438;
+.paginationContainer > button:hover {
+  background-color: #ffffff;
+  color: #162d58;
 }
 
-.paginationButton[disabled] {
+.paginationContainer > button[disabled] {
   cursor: not-allowed;
+  background-color: #ffffff;
 }
-<<<<<<< HEAD
 
-button[disabled] {
-  cursor: not-allowed;
+.paginationContainer > button[disabled]:hover {
+  color: #ffffff;
 }
-=======
->>>>>>> 15a0b5838ab1dcc655ed377735e45a54bb19c466
